@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>FoodSources</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+      - pandas
+      - matplotlib
+      - seaborn
+      - paths:
+          - data/Indices_of_farm_output.csv
+          - data/cpifoodt.csv
+    </py-env>
+    </head>
+    <!-- <body style="background-color:#FFFFF0; margin-left: 2%;"> -->
+      <body style="margin-left: 2%;"></body>
+      <h1 style="text-align:center; font-size:250%; color:blue; "><b>Where's the BEEF?</b></h1>
+      <h1 style="text-align:center; font-size:150%; color:blue;"><b>And other foods.</b></h1>
+      <br>
+      <p style="text-align:center; color:blue; ">While the latest USDA-ERS shows the Indices of total farm output, data from 1948 - 2019 on a steady climb, <br>
+         we still have food shortages and climbing food prices. </p>
+      <br>
+      <img src="/images/usda_ers.png" alt="USDA-ERS" width="423" height="72">
+      <a href="https://www.ers.usda.gov/">       ( USDA-ERS Home )</a>
+      <div id="mpl"></div>
+      <py-script output="mpl">
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        
+        fig1, ax1 = plt.subplots()
+        # Get Indices of total farm output, data from 1948 - 2019
+        df = pd.read_csv('Indices_of_farm_output.csv')
+        #print(df[(df['Attribute'] == 'Total agricultural output')])
+        
+        total_Agri_Out = df[(df['Attribute'] == 'Total agricultural output')]
+        #total_Agri_Out = total_Agri_Out.reset_index(drop=True)
+        #total_Agri_Out_first_5 = total_Agri_Out.head(5)
+        #print(total_Agri_Out_first_5)
+        
+        #print(total_Agri_Out)
+        
+        #fig1, ax1 = plt.subplots()
+        #sns.scatterplot(x=total_Agri_Out['Year'],
+        #               y=total_Agri_Out['Value'])
+        # https://www.ers.usda.gov/
+        
+        #ax1.set_aspect('equal')
+        #ax1.set_title('U.S. Yearly Farm Output from 1948 - 2019', size=18)
+        #fig1
+        ax1.plot(total_Agri_Out['Year'], total_Agri_Out['Value'])
+        plt.xlabel('Yearly change', size=12)
+        plt.ylabel('Farm output value', size=12)
+        plt.title('Yearly Farm Output from 1948 - 2019', size=14)
+        
+        fig1
+      </py-script>
+      <br>
+      <h1 style="font-size:150%; color:blue;"><u><b>Food shortages & Price increase</b></u></h1>
+    
+      <p>
+        Global food prices started to rise in mid-2020 when businesses shut down due to the COVID-19 pandemic, 
+        straining supply chains. Farmers dumped out milk and let fruits and vegetables rot due to a lack of available truckers to transport goods to supermarkets, 
+        where prices spiked as consumers stockpiled food. A shortage of migrant labor as lockdowns restricted movement impacted crops worldwide.
+        The latest food index from the Bureau of Labor Statistics climbed 10.1 percent for the 12 months ending in May, the first increase of over 10 percent since 1981.
+        Climate change , the war with Russia's invasion of Ukraine.  China, Brazil are also top crop exports have had severe issues.
+      </p>
+      <br>
+      <br>
+
+
+    </body>
+</html>
