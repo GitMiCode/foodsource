@@ -24,32 +24,23 @@
       <br>
       <img src="/images/usda_ers.png" alt="USDA-ERS" width="423" height="72">
       <a href="https://www.ers.usda.gov/">       ( USDA-ERS Home )</a>
+      <br>
+      <br>
+      <h3 style="color:#708090; "><b>Matplotlib Plot</b></h3>
       <div id="mpl"></div>
       <py-script output="mpl">
         import pandas as pd
         import matplotlib.pyplot as plt
         import seaborn as sns
         
-        fig1, ax1 = plt.subplots()
+        fig1, ax1 = plt.subplots(figsize = (5,3))
+
         # Get Indices of total farm output, data from 1948 - 2019
         df = pd.read_csv('Indices_of_farm_output.csv')
         #print(df[(df['Attribute'] == 'Total agricultural output')])
         
         total_Agri_Out = df[(df['Attribute'] == 'Total agricultural output')]
-        #total_Agri_Out = total_Agri_Out.reset_index(drop=True)
-        #total_Agri_Out_first_5 = total_Agri_Out.head(5)
-        #print(total_Agri_Out_first_5)
-        
-        #print(total_Agri_Out)
-        
-        #fig1, ax1 = plt.subplots()
-        #sns.scatterplot(x=total_Agri_Out['Year'],
-        #               y=total_Agri_Out['Value'])
-        # https://www.ers.usda.gov/
-        
-        #ax1.set_aspect('equal')
-        #ax1.set_title('U.S. Yearly Farm Output from 1948 - 2019', size=18)
-        #fig1
+
         ax1.plot(total_Agri_Out['Year'], total_Agri_Out['Value'])
         plt.xlabel('Yearly change', size=12)
         plt.ylabel('Farm output value', size=12)
@@ -68,6 +59,36 @@
         Climate change , the war with Russia's invasion of Ukraine.  China, Brazil are also top crop exports have had severe issues.
       </p>
       <br>
-      <br>
+      <h3 style="color:#708090;"><b>SNS Plot</b></h3>
+      <div id="sns"></div>
+      <py-script output="sns">
+        
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        from matplotlib.pyplot import figure
+        import seaborn as sns        
+
+        dfood = pd.read_csv('cpifoodt.csv')
+        print('\n')
+        dfood = dfood.drop(columns=['Top-level', 'Aggregate', 'Low-level','Disaggregate', 'Adjustment relative to last month'])
+        attributeRowDropList = ['Relative importance', 'Month-to-month April 2022 to May 2022','Year-over-year May 2021 to May 2022', 'Year-to-date avg. 2021 to avg. 2022',
+                    '20-year historical average', 'Lower bound of forecast range 2022', 'Upper bound of forecast range 2022']
+        dfood = dfood[~dfood['Attribute'].isin(attributeRowDropList)]
+        dfood = dfood.dropna(subset=['Mid-level'])
+        dfood = dfood.reset_index(drop=True)
+
+        print('\n')
+        fig1, ax1 = plt.subplots(figsize = (5,3))
+        
+        ax1 = sns.scatterplot(x=dfood['Value'],y=dfood['Mid-level'], hue=dfood['Attribute'])
+        plt.xlabel('Price percentage changed', size=16)
+        plt.ylabel('Food catagories', size=16)
+        plt.title('Price Index on Food 2019 - 2021', size=20)
+        ax1.grid()
+        fig1
+
+    </py-script>
+    <br>
+    <br>
     </body>
 </html>
