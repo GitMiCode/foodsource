@@ -23,7 +23,7 @@
          we still have food shortages and climbing food prices. </p>
       <br>
       <img src="/images/usda_ers.png" alt="USDA-ERS" width="423" height="72">
-      <a href="https://www.ers.usda.gov/">       ( USDA-ERS Home )</a>
+      <a href="https://www.ers.usda.gov/" style="font-size:50%; color:blue">       ( USDA-ERS Home )</a>
       <br>
       <br>
       <h3 style="color:#708090; "><b>Matplotlib Plot</b></h3>
@@ -78,11 +78,11 @@
         dfood = dfood.reset_index(drop=True)
 
         print('\n')
-        fig1, ax1 = plt.subplots(figsize = (5,3))
+        fig1, ax1 = plt.subplots(figsize = (20,6))
         
         ax1 = sns.scatterplot(x=dfood['Value'],y=dfood['Mid-level'], hue=dfood['Attribute'])
-        plt.xlabel('Price percentage changed', size=16)
-        plt.ylabel('Food catagories', size=16)
+        plt.xlabel('Price percentage changed', size=20)
+        plt.ylabel('Food catagories', size=20)
         plt.title('Price Index on Food 2019 - 2021', size=20)
         ax1.grid()
         fig1
