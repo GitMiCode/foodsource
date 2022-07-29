@@ -79,6 +79,12 @@
         total_eggs = poultry_eggs['Value'].sum()
 
         print(f"Total years of eggs production is {total_eggs}")
+
+        col_count = len(poultry_eggs.axes[1])
+        print(f"Column count for eggs {col_count}")
+        row_cnt = poultry_eggs.count()[0]
+        print(f"Row count for eggs {row_cnt}")
+
       
       
       </py-script>
