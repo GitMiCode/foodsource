@@ -43,3 +43,6 @@ Testing was done with Google Chrome and MS Edge.
 - Table 4 Visualize you Data
   - Created one Matplotlib plot
   - Created one Seaborn plot
+- Table 5 Interpret your data and graphical output.
+  - Project shows that farm output in the US keeps increasing in production.  Prices of food is 
+    on the rise. One way to combat this is to utilize farmers markets. 
