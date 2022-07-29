@@ -18,7 +18,7 @@
       <h1 style="text-align:center; font-size:250%; color:blue; "><b>Where's the BEEF?</b></h1>
       <h1 style="text-align:center; font-size:150%; color:blue;"><b>And other foods.</b></h1>
       <br>
-      <p style="color:blue; ">While the latest USDA-ERS shows the Indices of total farm output, data from 1948 - 2019 on a steady climb, <br>
+      <p style="color:blue; ">While the latest USDA-ERS shows the Indices of total farm output, data from 1948 - 2019 is on a steady climb, <br>
          we still have food shortages and climbing food prices. </p>
       <br>
       <img src="/images/usda_ers.png" alt="USDA-ERS" width="423" height="72">
@@ -60,16 +60,16 @@
         #select_end = df.loc[df['Year'] == '2019']
         onerow = poultry_eggs[poultry_eggs['Year'] == '1948']
         beg = poultry_eggs.iloc[0]
-        print(beg)
+        #print(beg)
         end = poultry_eggs.iloc[70]
-        print(end) 
+        #print(end) 
         data = (beg, end )
         
         df_year = pd.DataFrame(data)
         df_year = df_year.reset_index(drop=True)
         diff_total = df_year['Value'].diff()
         
-        print(diff_total)
+        #print(diff_total)
         print('The difference in the egg output from 1948 and 2019 is 0.96187')
 
         #poultry_eggs = df[(df["Attribute"] == "Livestock and products output: Poultry and eggs")]
