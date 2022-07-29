@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[8]:
-
-
 import requests
 
 print("\n")
@@ -36,12 +30,6 @@ for markets in json['results']:
    #print(markets)
    spaceString = markets['marketname']
 print("\n")
-
-
-
-
-# In[ ]:
-
 
 
 
