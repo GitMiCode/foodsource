@@ -25,3 +25,21 @@ Testing was done with Google Chrome and MS Edge.
   - matplotlib
   - seaborn
 
+### Project Requirements Met
+- Table 1 Read data
+  - Read csv for Matplotlib plot
+  - Read different CSV for seaborn plot
+  - WSDL request for (json) farmers market search 
+- Table 2 Manipulate and clean your data
+  - Created list of columns and dropped them
+  - Created list of rows and dropped them
+  - Used dropna to drop empty rows
+- Table 3 Analyze your data
+  - Difference in egg catagory
+  - Average in egg catagory
+  - Total in egg catagory
+  - Column count for egg DF
+  - Row count in for egg DF
+- Table 4 Visualize you Data
+  - Created one Matplotlib plot
+  - Created one Seaborn plot
