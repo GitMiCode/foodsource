@@ -48,6 +48,41 @@
         fig1
       </py-script>
       <br>
+      <div id="egg"></div>
+      <py-script output="egg">
+        import pandas as pd
+
+        print('While the plot above does show yearly total farm output. It is actually comprised of a number of catagories such as eggs.')
+        df = pd.read_csv('Indices_of_farm_output.csv')
+        poultry_eggs = df[(df["Attribute"] == "Livestock and products output: Poultry and eggs")]
+        poultry_eggs = poultry_eggs.reset_index(drop=True)
+        #select_start = df.loc[df['Year'] == '1948']
+        #select_end = df.loc[df['Year'] == '2019']
+        onerow = poultry_eggs[poultry_eggs['Year'] == '1948']
+        beg = poultry_eggs.iloc[0]
+        print(beg)
+        end = poultry_eggs.iloc[70]
+        print(end) 
+        data = (beg, end )
+        
+        df_year = pd.DataFrame(data)
+        df_year = df_year.reset_index(drop=True)
+        diff_total = df_year['Value'].diff()
+        
+        print(diff_total)
+        print('The difference in the egg output from 1948 and 2019 is 0.96187')
+
+        #poultry_eggs = df[(df["Attribute"] == "Livestock and products output: Poultry and eggs")]
+        avg_value = poultry_eggs.Value.mean(),0
+        print(f"The average value of egg output from 1948 - 2019 is: {avg_value}")
+
+        total_eggs = poultry_eggs['Value'].sum()
+
+        print(f"Total years of eggs production is {total_eggs}")
+      
+      
+      </py-script>
+      <br>
       <h1 style="font-size:150%; color:blue;"><u><b>Food shortages & Price increase</b></u></h1>
     
       <p>
@@ -86,7 +121,6 @@
         plt.title('Price Index on Food 2019 - 2021', size=20)
         ax1.grid()
         fig1
-
       </py-script>
       <br>
       <br>
@@ -96,7 +130,7 @@
       <p>Farmers Markets - Looking for local/seasonal food from nearby farmers markets?<br>
         These markets are great for fresh food and lower prices.  You are also supporting a local farmer.</p>
       <p><b>Unfortunately I ran out of time trying to get the online searh for farmers market to work through python on this page.<br>
-          Please follow the links below to check or try them on Github, they will prompt you for a zip code and make a WSDL request.</b></p>
+          Please follow the links below to check or try them on Github, they will prompt you for a zip code and make a WSDL request for farmers markets in your area.</b></p>
       <br>      
       <a href="https://github.com/GitMiCode/foodsource/blob/main/fmkt.ipynb" style="font-size:110%; color:blue">FarmersMarket(fmkt.ipynb)</a><br>
       <a href="https://github.com/GitMiCode/foodsource/blob/main/fmkt.py" style="font-size:110%; color:blue">FarmersMarket(fmkt.py)</a><br>
