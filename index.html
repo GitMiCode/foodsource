@@ -14,12 +14,11 @@
           - data/cpifoodt.csv
     </py-env>
     </head>
-    <!-- <body style="background-color:#FFFFF0; margin-left: 2%;"> -->
       <body style="margin-left: 2%;"></body>
       <h1 style="text-align:center; font-size:250%; color:blue; "><b>Where's the BEEF?</b></h1>
       <h1 style="text-align:center; font-size:150%; color:blue;"><b>And other foods.</b></h1>
       <br>
-      <p style="text-align:center; color:blue; ">While the latest USDA-ERS shows the Indices of total farm output, data from 1948 - 2019 on a steady climb, <br>
+      <p style="color:blue; ">While the latest USDA-ERS shows the Indices of total farm output, data from 1948 - 2019 on a steady climb, <br>
          we still have food shortages and climbing food prices. </p>
       <br>
       <img src="/images/usda_ers.png" alt="USDA-ERS" width="423" height="72">
@@ -92,21 +91,25 @@
       <br>
       <br>
       <h1 style="font-size:150%; color:blue;"><u><b>Combat food price increases!</b></u></h1>
-      <h3 style="font-size:150%; color:rgb(249, 114, 2);"><b>Find and visit a farmers market in your area.</b></h3>
+      <h3 style="font-size:125%; color:rgb(249, 114, 2);"><b>Find and visit a farmers market in your area.</b></h3>
 
       <p>Farmers Markets - Looking for local/seasonal food from nearby farmers markets?<br>
         These markets are great for fresh food and lower prices.  You are also supporting a local farmer.</p>
+      <p><b>Unfortunately I ran out of time trying to get the online searh for farmers market to work through python on this page.<br>
+          Please follow the links below to check or try them on Github, they will prompt you for a zip code and make a WSDL request.</b></p>
+      <br>      
+      <a href="https://github.com/GitMiCode/foodsource/blob/main/fmkt.ipynb" style="font-size:110%; color:blue">FarmersMarket(fmkt.ipynb)</a><br>
+      <a href="https://github.com/GitMiCode/foodsource/blob/main/fmkt.py" style="font-size:110%; color:blue">FarmersMarket(fmkt.py)</a><br>
+      <a href="https://github.com/GitMiCode/foodsource" style="font-size:110%; color:rgb(255, 119, 0)"><b>foodsource Repo on Github</b></a>
+      <br>
       <br>
       <h1><b>pyscript REPL</b></h1>
-      Tip: press Shift-ENTER to evaluate a cell
-      <br>
+      <p>Really basic REPL, not fully implemented yet.  Just having fun with it<br>
+        Tip: press Shift-ENTER to evaluate a cell or hover in the cell and a run arrow will show to far right.<br>
+        Refresh screen to start over.</p>
       <div>
       <py-repl id="my-repl" auto-generate="true"> </py-repl>
       </div>  
-      <br>
-      <a href="https://www.ers.usda.gov/" style="font-size:110%; color:blue">       ( USDA-ERS Home )</a>
-      <a href="https://www.ers.usda.gov/" style="font-size:60%; color:blue">       ( USDA-ERS Home )</a>
-      <p>Shoot</p>
       <br>
       <br>
   </body>
