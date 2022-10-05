@@ -1,4 +1,9 @@
-# foodsource
+# Food Source
+
+Web page built using PyScript, Python and JavaScript.
+Please be advised that PyScript is very alpha and under heavy development. 
+PyScript is a brand-new framework that works directly with Python.
+Build interactive front-end apps using Python and JavaScript
 
 Foodsource is a quck glimpse into our current food situation.  
 U.S. farm outputs and food shortages and prices.
