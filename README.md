@@ -18,7 +18,7 @@ Testing was done with Google Chrome and MS Edge.
 - The requests library is needed to run fmkt.py or fmkt.ipynb.
 
 ### Instructions:
-- Start by visiting the project web page at [https://pydish.com/da1/index.html](http://pydish.com), this will host most of the project.
+- Start by visiting the project web page at [http://pydish.com](https://pydish.com/da1/index.html), this will host most of the project.
   - The page will end with links to search for farmers makets in your area.  
     This will bring you back to the foodsource repo for files fmkt.py or fmkt.ipynb.
 
